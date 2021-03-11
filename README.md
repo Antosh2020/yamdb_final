@@ -1,4 +1,4 @@
-![yamdb_final](https://github.com/Antosh2020/yamdb_final/workflows/yamdb_workflow/badge.svg?branch=master)
+[![yamdb_final](https://github.com/Antosh2020/yamdb_final/workflows/yamdb_workflow/badge.svg?branch=master)](https://github.com/Antosh2020/yamdb_final/actions)
 
 # Project Title
 
