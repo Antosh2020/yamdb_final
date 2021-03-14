@@ -1,6 +1,6 @@
 [![yamdb_final](https://github.com/Antosh2020/yamdb_final/workflows/yamdb_workflow/badge.svg?branch=master)](https://github.com/Antosh2020/yamdb_final/actions)
 
-# Project Title
+# YaMDb
 
 REST API for YaMDb, собирает отзывы пользователей на произведения.
 Произведения делятся на категории: «Книги», «Фильмы», «Музыка».
@@ -23,5 +23,12 @@ REST API for YaMDb, собирает отзывы пользователей н�
 4. Наполняем базу данными командой:
     docker-compose exec web python3 manage.py loaddata fixture.json
 
+### Технологии
+Python
+Django
+Django REST framework
+
+### Автор
+Anton Levishko: https://github.com/Antosh2020
 
 
