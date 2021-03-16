@@ -3,6 +3,7 @@ version: '3.8'
 volumes:
   postgres_data:
   static_data:
+  nginx_conf:
 
 services:
   db:
@@ -14,21 +15,22 @@ services:
       - ./.env
 
   web:
-    build: .
     image: antosh2020/yamdb_final:latest
     restart: always
     volumes:
       - static_data:/code/static
+      - nginx_conf:/code/nginx/
     depends_on:
       - db
     env_file:
       - ./.env
 
   nginx:
-    build: nginx/
+    image: nginx:1.19.0-alpine
     restart: always
     volumes:
       - static_data:/code/static
+      - nginx_conf:/etc/nginx/conf.d/
     ports:
       - "5000:80"
     depends_on:
