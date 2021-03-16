@@ -1,6 +1,6 @@
 [![yamdb_final](https://github.com/Antosh2020/yamdb_final/workflows/yamdb_workflow/badge.svg?branch=master)](https://github.com/Antosh2020/yamdb_final/actions)
 
-# YaMDb
+# YaMDb http://178.154.225.90:5000/redoc/
 
 REST API for YaMDb, собирает отзывы пользователей на произведения.
 Произведения делятся на категории: «Книги», «Фильмы», «Музыка».

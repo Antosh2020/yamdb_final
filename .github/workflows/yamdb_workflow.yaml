@@ -56,7 +56,6 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             docker pull antosh2020/yamdb_final:latest
-            docker stop $(docker ps -a -q)
             id=$(docker create antosh2020/yamdb_final:latest)
             docker cp $id:code/docker-compose.yaml docker-compose.yaml
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} > .env
@@ -68,8 +67,8 @@ jobs:
             echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
             echo PASSPHRASE=${{ secrets.PASSPHRASE }} >> .env
             docker rm -v $id
-            docker-compose --context remote down
-            docker-compose --context remote up -d --force-recreate --build
+            docker-compose down
+            docker-compose up -d --force-recreate --build
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
