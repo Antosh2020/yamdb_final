@@ -69,6 +69,7 @@ jobs:
             echo PASSPHRASE=${{ secrets.PASSPHRASE }} >> .env
             docker kill $(docker ps -q)
             docker rm $(docker ps -a -q)
+            docker rm -v $id
             docker-compose down
             docker-compose up -d
   send_message:
