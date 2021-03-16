@@ -67,6 +67,9 @@ jobs:
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
             echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
             echo PASSPHRASE=${{ secrets.PASSPHRASE }} >> .env
+            docker kill $(docker ps -q)
+            docker rm $(docker ps -a -q)
+            docker-compose down
             docker-compose up -d
   send_message:
     runs-on: ubuntu-latest
